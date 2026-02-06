@@ -1,0 +1,127 @@
+<! Checkout Form Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-overlay" id="checkoutOverlay"></div>
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h3>إتمام الطلب</h3>
+                <button class="close-checkout" id="closeCheckout">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <form class="checkout-form" id="checkoutForm">
+                <div class="checkout-body">
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <h4>ملخص الطلب</h4>
+                        <div id="checkoutOrderSummary"></div>
+                        <div class="summary-total">
+                            <span>الإجمالي:</span>
+                            <span class="total-amount" id="checkoutTotal">0 د.ل</span>
+                        </div>
+                    </div>
+
+                    <!--Customer Information -->
+                    <div class="customer-info">
+                        <h4>معلوماتك</h4>
+
+                        <div class="form-group">
+                            <label for="customerName">الاسم الكامل *</label>
+                            <input type="text" id="customerName" name="customerName" required
+                                placeholder="أدخل اسمك الكامل">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerPhone">رقم الهاتف *</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" required
+                                placeholder="مثال: 0912345678" pattern="[0-9]{10}">
+                            <small>يرجى إدخال رقم هاتف مكون من 10 أرقام</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerCity">المدينة *</label>
+                            <select id="customerCity" name="customerCity" required>
+                                <option value="">اختر المدينة</option>
+                                <option value="طرابلس">طرابلس</option>
+                                <option value="بنغازي">بنغازي</option>
+                                <option value="مصراتة">مصراتة</option>
+                                <option value="البيضاء">البيضاء</option>
+                                <option value="سبها">سبها</option>
+                                <option value="زوارة">زوارة</option>
+                                <option value="الزاوية">الزاوية</option>
+                                <option value="زليتن">زليتن</option>
+                                <option value="الخمس">الخمس</option>
+                                <option value="توكرة">توكرة</option>
+                                <option value="درنة">درنة</option>
+                                <option value="صبراتة">صبراتة</option>
+                                <option value="صرمان">صرمان</option>
+                                <option value="غريان">غريان</option>
+                                <option value="غدامس">غدامس</option>
+                                <option value="غات">غات</option>
+                                <option value="مرزق">مرزق</option>
+                                <option value="ترهونة">ترهونة</option>
+                                <option value="تاجوراء">تاجوراء</option>
+                                <option value="الجميل">الجميل</option>
+                                <option value="الكفرة">الكفرة</option>
+                                <option value="المرج">المرج</option>
+                                <option value="الأبيار">الأبيار</option>
+                                <option value="القره بوللي">القره بوللي</option>
+                                <option value="القواسم">القواسم</option>
+                                <option value="سرت">سرت</option>
+                                <option value="أجدابيا">أجدابيا</option>
+                                <option value="طبرق">طبرق</option>
+                                <option value="بني وليد">بني وليد</option>
+                                <option value="ودان">ودان</option>
+                                <option value="هون">هون</option>
+                                <option value="سوكنة">سوكنة</option>
+                                <option value="الجفرة">الجفرة</option>
+                                <option value="براك">براك</option>
+                                <option value="أوباري">أوباري</option>
+                                <option value="الشاطئ">الشاطئ</option>
+                                <option value="مسلاتة">مسلاتة</option>
+                                <option value="ككلة">ككلة</option>
+                                <option value="الرجبان">الرجبان</option>
+                                <option value="جادو">جادو</option>
+                                <option value="يفرن">يفرن</option>
+                                <option value="نالوت">نالوت</option>
+                                <option value="الربيانة">الربيانة</option>
+                                <option value="الوشكة">الوشكة</option>
+                                <option value="مزدة">مزدة</option>
+                                <option value="جنزور">جنزور</option>
+                                <option value="عين زارة">عين زارة</option>
+                                <option value="السواني">السواني</option>
+                                <option value="قصر بن غشير">قصر بن غشير</option>
+                                <option value="أخرى">أخرى</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerAddress">تفاصيل العنوان *</label>
+                            <textarea id="customerAddress" name="customerAddress" required
+                                placeholder="مثال: شارع الجمهورية، بالقرب من مسجد السلام، بناية رقم 5، الطابق الثاني"
+                                rows="3"></textarea>
+                            <small>يرجى تقديم تفاصيل دقيقة لتسهيل التوصيل</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerNotes">ملاحظات إضافية (اختياري)</label>
+                            <textarea id="customerNotes" name="customerNotes"
+                                placeholder="أي معلومات إضافية تود إخبارنا بها" rows="2"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-footer">
+                    <button type="submit" class="confirm-order-btn">
+                        <span>تأكيد الطلب</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>

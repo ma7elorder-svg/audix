@@ -1,0 +1,19 @@
+{
+  "name": "audix",
+  "version": "1.0.0",
+  "description": "A stunning, modern online store for Audix featuring premium design with blue and black theme colors. Built with HTML, CSS, and JavaScript with full Arabic language support (RTL layout).",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.0"
+  }
+}
