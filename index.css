@@ -1196,6 +1196,11 @@ body {
     .cart-content {
         width: 100%;
     }
+
+    /* Hide floating cards on mobile to prevent blocking text */
+    .hero-decoration {
+        display: none;
+    }
 }
 
 /* ==================== */

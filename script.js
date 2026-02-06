@@ -426,6 +426,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Close success modal button
+    const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+    if (closeSuccessBtn) {
+        closeSuccessBtn.addEventListener('click', closeSuccessModal);
+    }
+
+    // Success overlay
+    const successOverlay = document.querySelector('.success-overlay');
+    if (successOverlay) {
+        successOverlay.addEventListener('click', closeSuccessModal);
+    }
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         threshold: 0.1,
