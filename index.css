@@ -1486,6 +1486,114 @@ body {
     color: var(--white);
 }
 
-.checkout-form select:focus {
+
+/* ==================== */
+/* Success Modal */
+/* ==================== */
+
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3000;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.success-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.success-content {
+    position: relative;
+    background: var(--soft-black);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    transform: scale(0.9);
+    transition: var(--transition-normal);
+}
+
+.success-modal.active .success-content {
+    transform: scale(1);
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 255, 136, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+    color: #00FF88;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+    animation: success-pulse 2s infinite;
+}
+
+@keyframes success-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(0, 255, 136, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+    }
+}
+
+.success-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
     color: var(--white);
+}
+
+.success-content p {
+    color: var(--medium-gray);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.close-success-btn {
+    width: 100%;
+    background: #00FF88;
+    color: var(--deep-black);
+    border: none;
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.close-success-btn:hover {
+    background: #00CC6A;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
 }
