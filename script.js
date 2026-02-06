@@ -228,16 +228,16 @@ async function submitOrder(formData) {
         const result = await response.json();
 
         if (result.success) {
-            showNotification('تم إرسال الطلب بنجاح! شكراً لك.');
+            closeCheckout();
+            openSuccessModal();
 
-            // Close modal and clear cart after a delay
-            setTimeout(() => {
-                closeCheckout();
-                cart = [];
-                updateCart();
-                submitBtn.innerHTML = originalBtnContent;
-                submitBtn.disabled = false;
-            }, 2000);
+            // Clear cart
+            cart = [];
+            updateCart();
+
+            // Reset button
+            submitBtn.innerHTML = originalBtnContent;
+            submitBtn.disabled = false;
         } else {
             throw new Error('Server returned error');
         }
@@ -247,6 +247,25 @@ async function submitOrder(formData) {
         showNotification('حدث خطأ أثناء الإرسال. يرجى التأكد من تشغيل السيرفر والمحاولة مرة أخرى.');
         submitBtn.innerHTML = originalBtnContent;
         submitBtn.disabled = false;
+    }
+}
+
+// ==================== //
+// Success Modal //
+// ==================== //
+
+function openSuccessModal() {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.add('active');
+        // Play success sound (optional) or animation
+    }
+}
+
+function closeSuccessModal() {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.remove('active');
     }
 }
 
